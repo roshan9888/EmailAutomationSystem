@@ -14,7 +14,7 @@ function GoogleCallback() {
     // Send the code to your backend to exchange it for tokens
     const fetchTokens = async () => {
       try {
-        const response = await axios.get(`https://email-4.onrender.com/auth/google/callback?code=${code}`);
+        const response = await axios.get(`https://email-8.onrender.com/auth/google/callback?code=${code}`);
         console.log('Authentication successful:', response.data);
         navigate('/'); // Redirect to home page or any other page after successful authentication
       } catch (error) {
