@@ -1,31 +1,31 @@
-# React & Tailwind CSS Starter Pack
+The assignment is to build a tool that will parse and check the emails in a Google email ID, and respond to the e-mails based on the context using AI. Use BullMQ as the tasks scheduler This is a server-based application built with TypeScript and Express. It uses various packages such as Cohere for AI functionalities, googleapis for Google APIs, and axios for HTTP requests and bullMQ to process queues.
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+<img width="1391" alt="image" src="https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/320eb674-c9d7-46fb-a5b6-b362928acaf3">
 
-## Usage
+Using this Email id for SignIn.All the unread emails will be read by the google apis and Cohere will categorize it and generate response accordingly.
+![image](https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/fdeeebe8-8776-4888-8deb-b79a15449c25)
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+Example for categorization:
+examples: [
+          { text: 'I am very interested in your product.', label: 'Interested' },
+          { text: 'I would love to know more about your services.', label: 'Interested' },
+          { text: 'Can you provide more information?', label: 'More information' },
+          { text: 'I need more details about your offerings.', label: 'More information' },
+          { text: 'I am not interested.', label: 'Not Interested' },
+          { text: 'Please remove me from your mailing list.', label: 'Not Interested' },
+        ],
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
-
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
-
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
-
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+Example for response generate prompt for categorize emails
+switch (category) {
+    case 'Interested':
+      prompt = `The following email was received from ${senderName}:\n"${emailContent}"\n\nWrite a response to someone who is interested in our service and wants to know more. Offer to schedule a demo call and in best regards write AI Automation Reponse.`;
+      break;
+    case 'Not Interested':
+      prompt = `The following email was received from ${senderName}:\n"${emailContent}"\n\nWrite a polite response to someone who is not interested in our service and in best regards write AI Automation Reponse.`;
+      break;
+    case 'More information':
+      prompt = `The following email was received from ${senderName}:\n"${emailContent}"\n\nWrite a response to someone who wants more information about our service. Provide detailed information and offer to answer any questions and in best regards write AI Automation Reponse.`;
+      break;
+    default:
+      prompt = `The following email was received from ${senderName}:\n"${emailContent}"\n\nWrite a response to an email and in best regards write AI Automation Reponse.`;
+  }
