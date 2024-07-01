@@ -3,7 +3,8 @@ The assignment is to build a tool that will parse and check the emails in a Goog
 <img width="1391" alt="image" src="https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/320eb674-c9d7-46fb-a5b6-b362928acaf3">
 
 Using this Email id for SignIn.All the unread emails will be read by the google apis and Cohere will categorize it and generate response accordingly.
-![image](https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/fdeeebe8-8776-4888-8deb-b79a15449c25)
+![image](https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/8efd2f41-21bf-49b7-9805-a446f401fbbb)
+
 
 # Email Categorization and Response Generation
 
