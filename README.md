@@ -38,3 +38,6 @@ switch (category) {
     default:
       prompt = `The following email was received from ${senderName}:\n"${emailContent}"\n\nWrite a response to an email and in best regards write AI Automation Response.`;
   }
+
+These are the responses send to email sender generated using Cohere ai
+<img width="1145" alt="image" src="https://github.com/roshan9888/EmailAutomationSystem/assets/100696071/0f61faa8-c681-4040-8c95-ac4504dae0c7">
